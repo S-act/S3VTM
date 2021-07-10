@@ -53,6 +53,34 @@
     giri.innerHTML = shutuTalue;
 
     }
+    
+function cntList(){
+  
+  var cookies = document.cookie;
+  var cookieItem = cookies.split(";");
+  var retu = "";
+  var cookieValue = [];
+  var cookieName = [];
+  var loop = 0;
+  console.log(document.cookie);
+  for (i = 0; i < cookieItem.length; i++) {
+    var elem = cookieItem[i].split("=");
+    console.log(elem[1]);
+    var asa = elem[1].split("@");
+      cookieValue[Number(loop)] = unescape(asa[1]);
+      cookieName[Number(loop)] = String(asa[0]);
+      loop = loop +1;
+  }
+  
+
+for (kai = 0; kai <= loop; kai++){
+  shutuValue = cookieValue[Number(kai)] ;
+  shutuName = cookieName[Number(kai)] ;
+  retu = retu + shutuName + "残り"+ shutuValue +"ページ\r\n";
+}
+ alert(retu);
+}
+
 
 function cntStart()
 {

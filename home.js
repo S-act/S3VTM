@@ -33,7 +33,11 @@
         var elem = cookieItem[i].split("=");
         console.log(elem[1]);
         var asa = elem[1].split("@");
-
+        if(elem[0] == undefined){
+          document.cookie = ""+ elem[0] +"=" + elem[1] +";max-age=0 ;SameSite = strict";
+          console.log("undefind回避");
+          continue;
+        }
           kakusi[Number(loop)] = String(elem[0]);
           cookieTalue[Number(loop)] = unescape(asa[2]);
           cookieValue[Number(loop)] = unescape(asa[1]);
@@ -66,6 +70,11 @@ function cntList(){
   for (i = 0; i < cookieItem.length; i++) {
     var elem = cookieItem[i].split("=");
     console.log(elem[1]);
+    if(elem[0] == undefined){
+      document.cookie = ""+ elem[0] +"=" + elem[1] +";max-age=0 ;SameSite = strict";
+      console.log("undefind回避");
+      continue;
+    }
     var asa = elem[1].split("@");
       cookieValue[Number(loop)] = unescape(asa[1]);
       cookieName[Number(loop)] = String(asa[0]);

@@ -1,12 +1,40 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
 body{
-    background-color: rgb(0, 255, 213);
-    width: 100%;
+    background-color: rgb(0, 36, 30);
+    background-size: cover;
 }
 .bg1{
     background-color:rgba(209, 180, 255, 0.85);
 }
 .bg2{
     background-color:rgba(180, 255, 220, 0.85);
+}
+.design1{
+    background-color:rgba(255, 255, 255, 0.90);
+    width: 96%;
+    mix-blend-mode: hard-light;
+    box-shadow: 0 0 2vh #e2e7ff;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.designH{
+    mix-blend-mode: hard-light;
+    box-shadow: 0 0 2vh #9ce3ff;
+    background-color:rgba(132, 241, 255, 0.9);
+    width: 96%;
+    margin-top: 0px;
+    margin-bottom: 3vh;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+    padding: 10px;
 }
 .karada{
     width: 85%;
@@ -17,7 +45,8 @@ body{
     margin-bottom: 10vh;
 }
 .shu{
-    font-size: 5vw;
+    margin-top: 0px;
+    font-size: 7vw;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .center{
@@ -38,6 +67,10 @@ body{
     font-size: 6vw;
     text-align: center;
 }
+.font2{
+    font-size: 4vw;
+    text-align: center;
+}
 .ippai{
     width: 100%;
 
@@ -54,4 +87,8 @@ body{
 .off {
     opacity: 0;
     display: none;
+}
+.margi{
+    height:1vh;
+    width:100%;
 }

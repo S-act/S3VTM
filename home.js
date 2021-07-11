@@ -16,6 +16,7 @@
       // クッキー削除用 document.cookie = "T3=;max-age=0 ;SameSite = strict";
       document.cookie = "M"+ slot +"=" + meishou +"@"+ suuryou +"@"+ tanni +";max-age=31536000 ;SameSite = strict";
       console.log(document.cookie);
+      alert('課題が追加できました！');
     }
 
     // 読み込み
@@ -28,6 +29,9 @@
       var cookieValue = [];
       var cookieName = [];
       var loop = 0;
+      if(!cookies){
+        alert("現在登録されている課題はありません");
+      }
       console.log(document.cookie);
       for (i = 0; i < cookieItem.length; i++) {
         var elem = cookieItem[i].split("=");
@@ -45,7 +49,9 @@
           loop = loop +1;
         
       }
-      
+    if(loop == 0){
+      alert("現在登録されている課題はありません");
+    }
     var random = Math.floor(Math.random() * loop);
     kakusite = kakusi[Number(random)] ;
     shutuTalue = cookieTalue[Number(random)] ;
@@ -131,6 +137,9 @@ function nextCookie() {
   }
 
   proc();
+}
+function qantum(){
+  location.href = 'QA.html'; 
 }
 function killCookie() {
 

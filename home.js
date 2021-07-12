@@ -87,7 +87,7 @@ function cntList(){
       continue;
     }
       var asa = elem[1].split("@");
-     if(unescape(asa[1]) == "undefined"){
+     if(unescape(asa[0]) == "undefined"){
       document.cookie = ""+ elem[0] +"=" + elem[1] +";max-age=0 ;SameSite = strict";
       console.log("undefind回避");
       continue;

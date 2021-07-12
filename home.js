@@ -86,12 +86,12 @@ function cntList(){
       console.log("undefind回避");
       continue;
     }
+      var asa = elem[1].split("@");
      if(unescape(asa[1]) == "undefined"){
       document.cookie = ""+ elem[0] +"=" + elem[1] +";max-age=0 ;SameSite = strict";
       console.log("undefind回避");
       continue;
     }
-    var asa = elem[1].split("@");
       cookieValue[Number(loop)] = unescape(asa[1]);
       cookieName[Number(loop)] = String(asa[0]);
       loop = loop +1;

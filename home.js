@@ -37,7 +37,12 @@
         var elem = cookieItem[i].split("=");
         console.log(elem[1]);
         var asa = elem[1].split("@");
-        if(elem[0] == undefined){
+        if(!elem[0]){
+          document.cookie = ""+ elem[0] +"=" + elem[1] +";max-age=0 ;SameSite = strict";
+          console.log("undefind回避");
+          continue;
+        }
+        if(unescape(asa[1]) === undefined){
           document.cookie = ""+ elem[0] +"=" + elem[1] +";max-age=0 ;SameSite = strict";
           console.log("undefind回避");
           continue;
@@ -76,7 +81,7 @@ function cntList(){
   for (i = 0; i < cookieItem.length; i++) {
     var elem = cookieItem[i].split("=");
     console.log(elem[1]);
-    if(elem[0] == undefined){
+    if(!elem[0]){
       document.cookie = ""+ elem[0] +"=" + elem[1] +";max-age=0 ;SameSite = strict";
       console.log("undefind回避");
       continue;

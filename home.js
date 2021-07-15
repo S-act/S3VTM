@@ -88,7 +88,10 @@ function cntList(){
       continue;
     }
     var asa = elem[1].split("@");
-    var yoru = elem[0].slice(1);
+    var yoru = elem[0].trim() ;
+    yoru = String(yoru).slice(1);
+    console.log(yoru.length);
+    
     if(isNaN(asa[1])){
       document.cookie = ""+ elem[0] +"=" + elem[1] +";max-age=0 ;SameSite = strict";
       console.log("undefind回避");

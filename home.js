@@ -76,6 +76,7 @@ function cntList(){
   var retu = "";
   var cookieValue = [];
   var cookieName = [];
+  var cookieNumber = [];
   var loop = 0;
   console.log(document.cookie);
   for (i = 0; i < cookieItem.length; i++) {
@@ -87,11 +88,13 @@ function cntList(){
       continue;
     }
     var asa = elem[1].split("@");
+    var yoru = elem[0].slice(1);
     if(isNaN(asa[1])){
       document.cookie = ""+ elem[0] +"=" + elem[1] +";max-age=0 ;SameSite = strict";
       console.log("undefind回避");
       continue;
     }else{
+      cookieNumber[Number(loop)] = yoru;
       cookieValue[Number(loop)] = unescape(asa[1]);
       cookieName[Number(loop)] = String(asa[0]);
       loop = loop +1;
@@ -100,9 +103,10 @@ function cntList(){
   
 
 for (kai = 0; kai < loop; kai++){
+  shutuNumber = cookieNumber[Number(kai)] ;
   shutuValue = cookieValue[Number(kai)] ;
   shutuName = cookieName[Number(kai)] ;
-  retu = retu + shutuName + "残り"+ shutuValue +"ページ\r\n";
+  retu = retu + "スロット" + shutuNumber + "： " + shutuName + "残り"+ shutuValue +"ページ\r\n";
 }
  alert(retu);
 }
